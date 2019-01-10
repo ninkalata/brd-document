@@ -1,0 +1,184 @@
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        function validateForm() {
+// Customer name validation
+var name_text;
+var customer_name = document.getElementById("fromName").value;
+if(/^[a-zA-Z0-9-]*$/.test(customer_name) == true) {
+	if(customer_name!=null)
+		{
+    name_text = "valid";
+document.getElementById("CustomerNameAlert").innerHTML = name_text;
+//alert('Your search string contains illegal characters.');
+}}
+else
+{
+    name_text = "invalid";
+    alert(name_text);
+    return false;
+document.getElementById("CustomerNameAlert").innerHTML = name_text;
+}
+            // Pincode Validation
+           var   pin_text;
+      var  pin_code = document.getElementById("fromPincode").value;
+       
+           if(pin_code.length == 6 && pincode.length!=null)
+           {
+            pin_text = "input valid";
+               document.getElementById("pincodeAlert").innerHTML = pin_text;
+           }
+           else{
+            pin_text = "Pincode must be in six digits";
+            alert(pin_text);
+            return false;
+               document.getElementById("pincodeAlert").innerHTML = pin_text;
+           }
+//Email Vadidation  
+var  mailtext;
+var  mail=document.getElementById("fromEmail").value;
+  if(/(.+)@(.+){2,}\.(.+){2,}/.test(mail) == true) {
+    mailtext = "valid";
+   document.getElementById("Ealert").innerHTML = mailtext;
+}else
+{
+    mailtext = "invalid";
+    alert(mailtext);
+    return false;
+ document.getElementById("Ealert").innerHTML = mailtext;
+}
+//Record Validation
+var record_text;
+
+var record= document.getElementById("fromRecordStatus").value;
+if ( record.includes("N")||record.includes("M")||record.includes("D")||record.includes("A")||record.includes("R"))
+ {
+     if(record!=null)
+     {
+ record_text = "Input  valid";
+    document.getElementById("RecordStatusAlert").innerHTML = record_text;
+}
+}
+ else {
+ record_text = "Invalid input!! Please reenter (N- New, M- Modified, D- Deleted, A - Authorized, R - Rejected) ";
+ alert(record_text);
+ return false;
+    document.getElementById("RecordStatusAlert").innerHTML = record_text;
+}
+//created Date
+document.getElementById("fromCreateDate").value = (new Date()).format("dd/mm/yyyy");
+}
+document.form1.submit();
+        </script>
+</head>
+<body>    
+        <form action="Newuser" name="form1" method="post">
+            <label for="Customer ID">Customer ID</label>
+           
+            <input name="Customer ID" id="fromID" type="text" placeholder="Enter the Customer ID" 
+                required="">
+            <label for="Customer ID">Customer ID</label>
+           
+                <input name="Customer Code" id="fromCode" type="text" placeholder="Enter the Customer Code" 
+                    required="">
+
+        
+            <label for="Customer Name">Customer Name</label>
+         
+                <input name="Customer Name"  id="fromName"type="text" placeholder="Enter the Customer Name" 
+                    required="">
+                    <p id="CustomerNameAlert"></p>
+
+            <label  for="Customer Address 1">Customer Address 1</label>
+           
+                <input  name="Customer Address 1" id="fromAddress1"  type="text" placeholder="Enter the Customer Address 1" 
+                    required="">
+
+
+       
+            <label  for="Customer Address 2">Customer Address 2</label>
+     
+                <input id="Customer Address 2" name="Customer Address 2"  type="text" placeholder="Enter the Customer Address 2" >
+           
+
+        
+            <label>Customer Pin Code</label>
+     
+                <input name="Customer Pin Code" id="fromPincode"  type="number" placeholder="Enter the Customer Pin Code" 
+                    required="">
+                    <p id="pincodeAlert"></p>
+          
+
+
+       
+            <label  for="E-mail address">E-mail address</label>  
+          
+            <input name="E-mail address" type="text"  id="fromEmail"placeholder="your@email.com"required="">
+              <p id="Ealert"></p>
+            
+
+      
+            <label  for="Contact Number">Contact Number</label>
+           
+                <input  name="Contact Number" id="fromContactNumber"  type="number" placeholder="Enter the Contact Number" 
+                    required="">
+
+           
+     
+            <label for="Primary Contact Person">Primary Contact Person</label>
+           
+    <input  name="Primary Contact Person" id="fromContactPerson"  type="text" placeholder="Enter the Primary Contact Person" required="">
+    
+                    <label for="Record Status">Record Status</label>
+            
+                <input name="Record Status" id="fromRecordStatus" type="text"  placeholder=" N - New, M - Modified, D - Deleted, A - Authorized, R - Rejected "
+                    required="">
+                    <p id="RecordStatusAlert"></p>
+
+    <label  for="Active/Inactive Flag">Active/Inactive Flag</label>
+
+        <select name="Active/Inactive Flag" id="fromFlag" >
+      
+            <option value="1">Active</option>
+            <option value="2">Inactive</option>
+        </select>
+            <label  for="Create Date">Create Date</label>
+            
+                <input name="Create Date" id="fromCreateDate" type="date" placeholder="Enter the Create Date" 
+                    required="">
+            <label  for="Created By">Created By</label>
+         
+                <input name="Created By" id="fromCreatedBy"  type="text" placeholder="Enter the Created By" 
+                    required="">
+
+    
+            <label for="Modified Date">Modified Date</label>
+           
+                <input  name="Modified Date" id="fromModifiedDate" type="date" placeholder="Enter the Modified Date" >
+            <label  for="Modified by">Modified by</label>
+         
+                <input  name="Modified by" id="fromModifiedBy" type="text" placeholder="Enter the Modified by" >
+      
+            <label for=" Authorized Date"> Authorized Date</label>
+    
+                <input  name=" Authorized Date" id="fromAuthorizedDate" type="date" placeholder="Enter the  Authorized Date">
+
+        
+            <label  for=" Authorized by"> Authorized by</label>
+      
+                <input name=" Authorized by" id="fromAuthorizedBy" type="text" placeholder="Enter the  Authorized by">
+
+     
+            <label  for="Submit"></label>
+      
+                    <button type="submit"  onclick="validateForm()"> Submit</button>
+             
+</form>
+</body>
+</html>

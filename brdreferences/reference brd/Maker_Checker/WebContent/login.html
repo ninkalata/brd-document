@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+<title>From</title>
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* {
+ box-sizing: border-box; color: Red;
+ } */
+hr {
+	border: 1px solid #f1f1f1;
+	margin-bottom: 25px;
+}
+
+.regfrm {
+	background-color: #d078ef36;
+	color: #fd0303a8;
+	text-align: center;
+	padding: 6px;
+}
+
+.maincont {
+	font-family: sans-serif;
+	font-size: 100%;
+	padding: 1%;
+}
+
+input[type=text], input[type=password] {
+	width: 97%;
+	padding: 15px;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=passord] {
+	background-color: #cbc7e8d9;
+	outline: none;
+	opacity: 0.9
+}
+
+.regbtn {
+	font-size: 26px;
+	background-color: #11ea11;
+	opacity: 81.9;
+	border: none;
+	padding: 9px;
+	width: 100%;
+}
+
+.mainselect {
+	padding: 1%;
+}
+</style>
+
+</head>
+
+<body>
+	<header>
+		<b><h1 class="regfrm">Login Form</h1></b>
+
+	</header>
+	<form action="Login" method="POST">
+		<hr>
+		<div class="maincont">
+			<lable for="UserName"> <b>USERNAME</b> </lable>
+			<br> <br> <input type="text" name="user"
+				placeholder="Enter name" required><br> <br>
+
+			<lable for="Password"> <b>PASSWORD </b></lable>
+			<br> <br> <input type="Password" name="password"
+				placeholder="Enter Password" required><br> <br>
+		</div>
+		<hr>
+		<div class="mainselect">
+			<select name="authority">
+				<option value="Maker">Maker</option>
+				<option value="Checker">Checker</option>
+			</select>
+		</div>
+
+		<div>
+			<button type="Submit" class="regbtn">Submit</button>
+		</div>
+	</form>
+</body>
+</html>

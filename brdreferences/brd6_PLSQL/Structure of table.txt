@@ -1,0 +1,40 @@
+  
+SQL> desc nsbt_atm_trx_log;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ BUSINESS_DATE                                      DATE
+ TRANSACTION_ID                                     NUMBER(10)
+ TRANSACTION_DATE                                   DATE
+ TRANSACTION_TIME                                   TIMESTAMP(6)
+ TRANSACTION_VALUE_DATE                             DATE
+ TRANSACTION_TYPE                                   VARCHAR2(2)
+ CUSTOMER_ID                                        NUMBER
+ ACCOUNT_NUMBER                                     VARCHAR2(20)
+ TRANSACTION_AMOUNT                                 NUMBER(16,3)
+
+SQL> desc host_atm_trx_log;
+ERROR:
+ORA-04043: object host_atm_trx_log does not exist
+
+
+SQL> ed
+Wrote file afiedt.buf
+
+  1* select * from log11680
+SQL> desc nsbt_host_trx_log;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ BUSINESS_DATE                                      DATE
+ TRANSACTION_ID                                     NUMBER(10)
+ TRANSACTION_DATE                                   DATE
+ TRANSACTION_TIME                                   TIMESTAMP(6)
+ TRANSACTION_VALUE_DATE                             DATE
+ TRANSACTION_TYPE                                   VARCHAR2(2)
+ CUSTOMER_ID                                        NUMBER
+ ACCOUNT_NUMBER                                     VARCHAR2(20)
+ TRANSACTION_AMOUNT                                 NUMBER(16,3)
+
+SQL> desc log11680;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ TRANSACTION_ID                                     NUMBER(20)
